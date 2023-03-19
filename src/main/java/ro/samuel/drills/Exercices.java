@@ -52,4 +52,38 @@ public class Exercices {
         return prime;
     }
 
+    public boolean cigarParty(int cigars, boolean isWeekend) {
+        if (isWeekend) {
+            return (cigars >= 40);
+        } else {
+            return (cigars >= 40 && cigars <= 60);
+        }
+    }
+
+    public boolean catDog(String str) {
+        int countD = 0;
+        int countC = 0;
+        for (int i = 0; i < str.length() - 2; i++) {
+            if (str.substring(i, i + 3).equals("dog")) {
+                countD++;
+            }
+            if (str.substring(i, i + 3).equals("cat")) {
+                countC++;
+            }
+        }
+        return countD == countC;
+    }
+
+    public String zipZap(String str) {
+        String answer = "";
+        for (int i = 0; i < str.length(); i++) {
+            if (i + 2 < str.length() && str.charAt(i) == 'z' && str.charAt(i + 2) == 'p') {
+                answer = answer + "zp";
+                i = i + 2;
+            } else {
+                answer = answer + str.charAt(i);
+            }
+        }
+        return answer;
+    }
 }
